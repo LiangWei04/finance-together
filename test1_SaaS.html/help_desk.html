@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help Desk</title>
+    <style>
+        /* Same styles as before */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+        }
+
+        nav {
+            width: 250px;
+            background: #333;
+            color: #fff;
+            height: 100vh;
+            padding: 1rem;
+        }
+
+        nav h2 {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        nav ul {
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 1rem 0;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            flex: 1;
+            padding: 2rem;
+        }
+
+        .section {
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.7rem 1.5rem;
+            background: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1rem;
+            margin-top: 1rem;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #0056b3;
+        }
+
+        .message {
+            margin-bottom: 1rem;
+        }
+
+        #chat-box {
+            border: 1px solid #ddd;
+            padding: 1rem;
+            border-radius: 5px;
+            max-width: 600px;
+            margin: 1rem auto;
+        }
+
+        #chat-box .message {
+            margin: 0.5rem 0;
+        }
+
+        #chat-box .user {
+            text-align: right;
+        }
+
+        #chat-box .bot {
+            text-align: left;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <h2>AI Financial Tool</h2>
+        <ul>
+            <li><a href="file:///Users/alantiu/Desktop/test%20application/html%20/test1_SaaS.html/main_navi_test1.html">home</a></li>
+            <li><a href="file:///Users/alantiu/Desktop/test%20application/html%20/test1_SaaS.html/analytic.html">Data Analytics</a></li>
+            <li><a href="file:///Users/alantiu/Desktop/test%20application/html%20/test1_SaaS.html/subscription.html">Subscription</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="chat">
+            <h2>AI Help Desk</h2>
+            <div id="chat-box">
+                <div class="message bot">Hello! How can I assist you today?</div>
+                <div id="typing-indicator"></div>
+            </div>
+            <input type="text" id="user-input" placeholder="Type your message">
+            <button class="btn" onclick="sendMessage()">Send</button>
+        </section>
+    </main>
+
+    <script>
+        function sendMessage() {
+            const userInput = document.getElementById('user-input').value;
+            const chatBox = document.getElementById('chat-box');
+            const typingIndicator = document.getElementById('typing-indicator');
+
+            if (!userInput.trim()) return;
+
+            const userMessage = document.createElement('div');
+            userMessage.className = 'message user';
+            userMessage.textContent = userInput;
+            chatBox.appendChild(userMessage);
+
+            typingIndicator.textContent = 'AI is thinking...';
+
+            setTimeout(() => {
+                const botMessage = document.createElement('div');
+                botMessage.className = 'message bot';
+                botMessage.textContent = `AI: How can I help you with your subscriptions?`;
+                chatBox.appendChild(botMessage);
+
+                typingIndicator.textContent = '';
+            }, 1000);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Analytics</title>
+    <style>
+        /* Same styles as before */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+        }
+
+        nav {
+            width: 250px;
+            background: #333;
+            color: #fff;
+            height: 100vh;
+            padding: 1rem;
+        }
+
+        nav h2 {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        nav ul {
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 1rem 0;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            flex: 1;
+            padding: 2rem;
+        }
+
+        .section {
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.7rem 1.5rem;
+            background: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1rem;
+            margin-top: 1rem;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #0056b3;
+        }
+
+        .result {
+            margin-top: 1rem;
+            font-weight: bold;
+        }
+
+        #chat-box {
+            border: 1px solid #ddd;
+            padding: 1rem;
+            border-radius: 5px;
+            max-width: 600px;
+            margin: 1rem auto;
+        }
+
+        #chat-box .message {
+            margin: 0.5rem 0;
+        }
+
+        #chat-box .user {
+            text-align: right;
+        }
+
+        #chat-box .bot {
+            text-align: left;
+            font-style: italic;
+        }
+
+        canvas {
+            margin: 2rem auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <h2>AI Financial Tool</h2>
+        <ul>
+            <li><a href="file:///Users/alantiu/Desktop/test%20application/html%20/test1_SaaS.html/main_navi_test1.html">home</a></li>
+            <li><a href="file:///Users/alantiu/Desktop/test%20application/html%20/test1_SaaS.html/subscription.html">Subscription</a></li>
+            <li><a href="file:///Users/alantiu/Desktop/test%20application/html%20/test1_SaaS.html/help_desk.html">Help Desk</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="analysis" class="section">
+            <h2>Basic Financial Analysis</h2>
+            <div>
+                <input type="number" id="income" placeholder="Enter total income">
+                <input type="number" id="expenses" placeholder="Enter total expenses">
+                <button class="btn" onclick="analyzeFinances()">Analyze</button>
+            </div>
+            <div class="result" id="result"></div>
+        </section>
+
+        <section id="savings-chart" class="section">
+            <h2>Savings Chart</h2>
+            <input type="number" id="savings-input" placeholder="Enter savings for this month">
+            <button class="btn" onclick="updateSavingsChart()">Update Chart</button>
+            <canvas id="savingsCanvas"></canvas>
+        </section>
+
+        <section id="analytics" class="section">
+            <h2>Actionable Insights</h2>
+            <button class="btn" onclick="updateAnalytics()">Get Insights</button>
+            <div class="analytics" id="analytics-results"></div>
+        </section>
+
+        <section id="cost-reduction" class="section">
+            <h2>Cost Reduction Suggestions</h2>
+            <button class="btn" onclick="updateCostSuggestions()">Get Suggestions</button>
+            <div class="savings-suggestions" id="cost-suggestions"></div>
+        </section>
+    </main>
+
+    <script>
+        // Financial Analysis and other functions will remain the same as before
+    </script>
+</body>
+</html>
